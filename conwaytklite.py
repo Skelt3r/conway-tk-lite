@@ -1,5 +1,5 @@
 from random import randint
-from tkinter import Button, Frame, Label, Menu, Tk, Toplevel
+from tkinter import Button, Frame, Label, Menu, Tk
 
 
 class ConwayTk:
@@ -99,7 +99,7 @@ class ConwayTk:
 
     def run(self):
         self.root = Tk()
-        self.root.title('Conway\'s Game of Life')
+        self.root.title('Conway\'s Game of Life (Lite Version)')
         self.root.resizable(0, 0)
         
         self.bg_frame = Frame(self.root)
@@ -107,9 +107,6 @@ class ConwayTk:
 
         self.menu_bar = Menu(self.root)
         self.file_menu = Menu(self.menu_bar, tearoff=0)
-
-        self.config_win = Toplevel(self.root)
-        self.config_win.destroy()
 
         self.menu_bar.add_cascade(label='File', menu=self.file_menu)
         self.file_menu.add_command(label='Pause', command=self.pause, accelerator='|   Space')
